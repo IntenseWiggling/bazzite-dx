@@ -32,7 +32,7 @@ jobs:
       fail-fast: false
       matrix:
         base_image:
-          - bazzite-deck
+          # - bazzite-deck
           # - bazzite-deck-gnome
           # - bazzite-deck-nvidia-gnome
           - bazzite-deck-nvidia

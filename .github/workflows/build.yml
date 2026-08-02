@@ -269,7 +269,7 @@ jobs:
       - name: Sign container image
         if: github.event_name != 'pull_request'
         run: |
-          cosign sign -y --key env://COSIGN_PRIVATE_KEY --new-bundle-format=false ${{ steps.lowercase.outputs.registry }}/${{ steps.lowercase.outputs.image }}@${{ steps.push.outputs.digest }}
+          cosign sign -y --key env://COSIGN_PRIVATE_KEY --new-bundle-format=false --new-bundle-format=false --registry-referrers-mode=legacy ${{ steps.lowercase.outputs.registry }}/${{ steps.lowercase.outputs.image }}@${{ steps.push.outputs.digest }}
         env:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
 
